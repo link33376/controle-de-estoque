@@ -11,7 +11,7 @@ require_once BASE_PATH . '/includes/cabecalho.php';
 
     <div class="alert alert-danger w-50 text-center mx-auto">
         <p>Deseja realmente excluir o fornecedor <b>Nome do fornecedor...</b>?</p>
-        <a href="listar.php" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Não</a>
+        <a href="<?= BASE_URL ?>/fornecedores/listar.php" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Não</a>
         <a href="" class="btn btn-danger"><i class="bi bi-check-circle"></i> Sim</a>
     </div>
 </section>

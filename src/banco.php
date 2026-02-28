@@ -18,9 +18,12 @@ try {
     $usuario, 
     $senha);
 
-} catch (\Throwable $erro) {
+    // habilitando laçamento de erro e exceção para o PDO
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo "Conexão bem-sucedida!";   
+} catch (Throwable $erro) {
     //lançavel serve para qualquer tipo de erro ou exceção
     //captura de erro caso a conexão falhe  
-
+    die("Erro na conexão: " . $erro->getMessage());
 }
-

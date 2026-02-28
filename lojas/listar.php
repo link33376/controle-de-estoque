@@ -11,7 +11,7 @@ require_once BASE_PATH . '/includes/cabecalho.php';
 
 
     <p class="text-center my-4">
-        <a href="inserir.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Adicionar Nova Loja</a>
+        <a href="<?= BASE_URL ?>/lojas/inserir.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Adicionar Nova Loja</a>
     </p>
 
     <div class="table-responsive">
@@ -30,10 +30,10 @@ require_once BASE_PATH . '/includes/cabecalho.php';
                         <td>ID da loja...</td>
                         <td>Nome da loja...</td>
                         <td class="text-end">
-                            <a class="btn btn-warning btn-sm" href="editar.php"><i class="bi bi-pencil-square"></i> Editar</a>
+                            <a class="btn btn-warning btn-sm" href="<?= BASE_URL ?>/lojas/editar.php"><i class="bi bi-pencil-square"></i> Editar</a>
                         </td>
                         <td class="text-start">
-                            <a class="btn btn-danger btn-sm" href="excluir.php"><i class="bi bi-trash"></i> Excluir</a>
+                            <a class="btn btn-danger btn-sm" href="<?= BASE_URL ?>/lojas/excluir.php"><i class="bi bi-trash"></i> Excluir</a>
                         </td>
                     </tr>
                 

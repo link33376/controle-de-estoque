@@ -13,7 +13,7 @@ require_once BASE_PATH . '/includes/cabecalho.php';
         <p> Deseja realmente excluir esta loja?</p>
         <p>Caso existam registros de estoque dela, <b>eles também serão excluídos!</b></p>
 
-        <a href="listar.php" class="btn btn-secondary">Não</a>
+        <a href="<?= BASE_URL ?>/lojas/listar.php" class="btn btn-secondary">Não</a>
         <a href="" class="btn btn-danger">Sim</a>
     </div>
 </section>
