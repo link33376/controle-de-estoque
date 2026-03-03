@@ -4,13 +4,13 @@
 function buscarUsuario(PDO $conexao)
 {
 
-$SQL = "c";
+$sql = "SELECT id, nome, email FROM usuarios ORDER BY nome";
 
 //$stmt
 //$queery
 
-$consulta = $conexao->prepare($SQL);
+$consulta = $conexao->prepare($sql);
 $consulta->execute();
-return $consulta->fetch(PDO::FETCH_ASSOC);
+return $consulta->fetchAll(PDO::FETCH_ASSOC);
 
 } 
