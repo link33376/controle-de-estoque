@@ -1,8 +1,13 @@
 <?php
 require_once __DIR__ . '/../config.php';
+require_once BASE_PATH . '/src/usuario_crud.php';
+
+$usuario = buscarUsuario($conexao);
+var_dump($usuario);
 
 
 $titulo = "Usuários |";
+
 require_once BASE_PATH . '/includes/cabecalho.php';
 ?>
 
