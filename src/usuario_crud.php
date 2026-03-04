@@ -1,17 +1,18 @@
 <?php 
 //usuario_crud.php
 
-function buscarUsuario(PDO $conexao )
-{
+    function buscarUsuario(PDO $conexao)
+    {
 
-$sql = "SELECT id, nome, email FROM usuarios ORDER BY nome";
+    $sql = "SELECT id, nome, email FROM usuarios ORDER BY nome";
 
-//$stmt
-//$queery
+    //stmt
+    //queery
 
-$consulta = $conexao->prepare($sql);
-$consulta->execute();
+    $consulta = $conexao->prepare($sql);
+    $consulta->execute();
+    return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    
+    }
 
-// fetch vetor que traz um unico registro do banco de dados
-return $consulta->fetchAll(PDO::FETCH_ASSOC);      
-} 
+?>
