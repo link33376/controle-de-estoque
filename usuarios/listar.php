@@ -15,15 +15,13 @@ require_once BASE_PATH . '/includes/cabecalho.php';
 <section class="text-center mb-4 border rounded-3 p-4 border-primary-subtle">
     <h3><i class="bi bi-person-gear"></i> Gerenciar Usuários</h3>
 
-    
-
     <p class="text-center my-4">
         <a href="inserir.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Adicionar Novo Usuário</a>
     </p>
 
     <div class="table-responsive">
         <table class="table table-hover align-middle caption-top">
-            <caption>Quantidade de registros: 1</caption>
+            <caption>Quantidade de registros: <?= count(value: $usuario) ?></caption>
             <thead class="align-middle table-light">
                 <tr>
                     <th>ID</th>
