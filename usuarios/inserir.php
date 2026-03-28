@@ -2,6 +2,38 @@
 require_once __DIR__ . '/../config.php';
 
 
+//inserir email nome e senha do usuario no banco de dados
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = ($_POST['nome']);
+    $email = ($_POST['email']);
+    $senha = ($_POST['senha']);
+
+//echo $nome,$email,$senha;
+if($nome&&$email&&$senha){
+   
+$sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
+$stmt = $conexao->prepare($sql);
+
+$stmt->execute([
+    ':nome' => $nome,
+    ':email' => $email,
+    ':senha' => password_hash($senha, PASSWORD_DEFAULT)
+]);
+
+
+
+    header ('Location: ' . BASE_URL . '/usuarios/listar.php');
+    exit;
+}else{
+    echo "<div class='alert alert-danger'>Todos os campos são obrigatórios.</div>";
+    }
+}
+
+
+
+
+    
 $titulo = "Adicionar Usuario |";
 require_once BASE_PATH . '/includes/cabecalho.php';
 ?>

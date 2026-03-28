@@ -17,6 +17,17 @@ require_once __DIR__ . '/../config.php';
 </head>
 
 <body>
+  <div class ="bg-primary text-white py-2">
+
+
+     <div class="container">
+    <a href="<?=BASE_URL?>/usuarios/listar.php" class="btn btn-sm btn-outline-light">  
+
+    usuários 
+    
+  </a>
+  </div>
+  </div>
 
   <div class="bg-primary text-white py-2">
 

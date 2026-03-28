@@ -9,6 +9,14 @@ $usuarios = buscarUsuario($conexao);
 // echo "</pre>";
 
 
+require_once BASE_PATH . '/src/usuario_crud.php';
+
+$usuario = buscarUsuario($conexao);
+//echo "<pre>";
+//var_dump($usuario);
+//echo "</pre>";
+
+
 $titulo = "Usuários |";
 require_once BASE_PATH . '/includes/cabecalho.php';
 ?>
@@ -24,7 +32,7 @@ require_once BASE_PATH . '/includes/cabecalho.php';
 
     <div class="table-responsive">
         <table class="table table-hover align-middle caption-top">
-            <caption>Quantidade de registros: <?= count($usuarios) ?></caption>
+            <caption>Quantidade de registros: <?= count($usuario) ?></caption>
             <thead class="align-middle table-light">
                 <tr>
                     <th>ID</th>
@@ -34,9 +42,7 @@ require_once BASE_PATH . '/includes/cabecalho.php';
                 </tr>
             </thead>
             <tbody>
-
-
-                <?php foreach ($usuarios as $usuario) : ?>
+                 <?php foreach ($usuario as $usuario): ?>
                     <tr>
                         <td><?= $usuario['id'] ?></td>
                         <td><?= $usuario['nome'] ?></td>
@@ -48,8 +54,10 @@ require_once BASE_PATH . '/includes/cabecalho.php';
                             <a class="btn btn-danger btn-sm" href="excluir.php?id=<?= $usuario['id'] ?>"><i class="bi bi-trash"></i> Excluir</a>
                         </td>
                     </tr>
-                <?php endforeach ?>
 
+                 <?php endforeach; ?>   
+
+                
             </tbody>
         </table>
     </div>
